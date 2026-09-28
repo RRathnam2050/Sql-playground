@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SQL Playground — learn SQL by running it</title>
+<meta name="description" content="A free, in-browser SQL course. Real SQLite, 17 modules from absolute beginner to window functions and recursive CTEs, graded practice, and progress that's saved as you go.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.min.js"></script>
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<div id="loading" class="loading">
+  <div class="spin"></div>
+  <div class="mono" id="loadmsg">loading the SQLite engine…</div>
+</div>
+
+<div class="app">
+  <header class="top">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">≡</button>
+    <div class="brand">
+      <span class="mark">sql<b>›</b>playground</span>
+      <span class="sub">learn it by running it</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="status"><span class="dot off" id="dbdot"></span><span id="dbstat">connecting…</span></div>
+    <div class="progress-pill">solved <b id="pcount">0</b>/<span id="ptotal">0</span></div>
+    <button class="ghost" id="resetdb" title="Restore the database to its original state">reset db</button>
+  </header>
+
+  <div class="body">
+    <aside class="rail" id="rail">
+      <div class="rail-label">Modules</div>
+      <nav id="modnav"></nav>
+      <div class="divider"></div>
+      <nav>
+        <button class="util" data-view="schema"><span class="ic">▤</span> Schema reference</button>
+        <button class="util" data-view="playground"><span class="ic">▸</span> Playground</button>
+      </nav>
+      <div class="rail-foot">
+        Everything runs locally in your browser on a real SQLite database. Your progress is saved on this device.
+        <br><button id="resetprogress">reset progress</button>
+      </div>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+    <main class="work" id="work"></main>
+  </div>
+</div>
+
+<script type="module" src="src/app.js"></script>
+</body>
+</html>
