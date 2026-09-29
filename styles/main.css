@@ -124,6 +124,7 @@ textarea.sqlin::placeholder{color:var(--on-ink-faint);}
 
 /* ---------- results ---------- */
 .result{margin-top:12px;}
+.result:not(:empty){background:var(--paper);border-radius:8px;padding:10px;margin:12px 10px 10px;}
 .result-meta{font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-bottom:6px;}
 .tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:9px;}
 table.res{border-collapse:collapse;width:100%;font-size:12.5px;}
